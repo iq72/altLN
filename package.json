@@ -13,8 +13,7 @@
   },
   "scripts": {
     "build": "browserify -t [reactify --es6] src/App.jsx > build/app.js",
-    "start": "npm run build && open 'index.html' ",
-    "dev": "nodemon --exec babel-node -- $npm_package_main"
+    "start": "npm run build && open 'index.html' "
   },
   "author": "Josh Perez <josh@goatslacker.com>",
   "license": "MIT"

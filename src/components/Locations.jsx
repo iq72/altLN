@@ -1,5 +1,6 @@
 var React = require('react');
 var LocationStore = require('../stores/LocationStore');
+var LocationsActions = require('../actions/LocationsActions');
 
 var Locations = React.createClass({
   getInitialState(){
@@ -8,6 +9,7 @@ var Locations = React.createClass({
 
   componentDidMount(){
     LocationStore.listen(this.onChange);
+    LocationsActions.fetchLocations();
   },
 
   componentWillUnmount(){
@@ -17,7 +19,9 @@ var Locations = React.createClass({
   onChange(state){
     this.setState(state);
   },
-
+  handleClick(){
+    LocationsActions.fetchLocations();
+  },
   render(){
     if(this.state.errorMessage){
       return(
@@ -27,6 +31,7 @@ var Locations = React.createClass({
     if(!this.state.locations.length){
       return(
         <div>loading...</div>
+        // <button type="button" onClick = {this.handleClick} > FetchLocations </button>
       );
     }
     return(
