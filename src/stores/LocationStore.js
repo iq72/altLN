@@ -10,17 +10,20 @@ class LocationStore {
       handleFetchLocations: LocationsActions.FETCH_LOCATIONS,
       handleLocationsFailed: LocationsActions.LOCATIONS_FAILED
     });
-  },
-  handleUpdateLocations(locations){
+  }
+
+  handleUpdateLocations (locations){
     this.locations = locations;
     this.errorMessage = null;
-  },
+  }
+
   handleFetchLocations(){
     this.locations=[];
-  },
+  }
+
   handleLocationsFailed(errorMessage){
     this.errorMessage = errorMessage;
   }
 }
 
-module.exports = alt.createStore(LocaitonStore, 'LocationStore');
+module.exports = alt.createStore(LocationStore, 'LocationStore');

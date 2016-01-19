@@ -4,7 +4,8 @@ var LocationSource = require('../sources/LocationSource');
 class LocationsActions {
   updateLocations(locations){
     return locations;
-  },
+  }
+
   fetchLocations(){
     // we dispatch an event here so we can have "loading" state.
     dispatch();
@@ -14,7 +15,8 @@ class LocationsActions {
     }).catch((errorMessage)=>{
       this.locationsFailed(errorMessage);
     });
-  },
+  }
+  
   locationsFailed(errorMessage){
     return errorMessage;
   }
