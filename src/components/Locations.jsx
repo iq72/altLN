@@ -1,4 +1,5 @@
 var React = require('react');
+var alt = require('alt');
 var LocationStore = require('../stores/LocationStore');
 var LocationsActions = require('../actions/LocationsActions');
 
@@ -35,13 +36,15 @@ var Locations = React.createClass({
       );
     }
     return(
+      <AltContainer store={LocationStore}>
       <ul>
-        {this.state.locations.map( (location) => {
+        {this.props.locations.map( (location) => {
           return(
             <li>{location.name}</li>
           );
         })}
       </ul>
+      </AltContainer>
     );
   }
 });
