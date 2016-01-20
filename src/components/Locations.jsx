@@ -1,5 +1,5 @@
 var React = require('react');
-var alt = require('alt');
+var AltContainer = require('alt/AltContainer');
 var LocationStore = require('../stores/LocationStore');
 var LocationsActions = require('../actions/LocationsActions');
 
